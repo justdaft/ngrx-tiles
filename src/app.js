@@ -29,9 +29,9 @@ var App = (function () {
         });
         console.log('addTodo(newTodo): ');
     };
-    App.prototype.completeTodo = function (todo) {
+    App.prototype.matchedTodo = function (todo) {
         this.store.dispatch({
-            type: TodoActions.COMPLETE_TODO,
+            type: TodoActions.MATCHED_TODO,
             payload: todo
         });
     };
@@ -56,7 +56,7 @@ var App = (function () {
         core_1.Component({
             selector: 'todo-app',
             providers: [],
-            template: "\n    <div>\n      <log-monitor></log-monitor>\n      <h2>Todos</h2>\n      <new-todo-input (create)=\"addTodo($event)\"></new-todo-input>\n\n      =========\n      <todo-list\n        [todos]=\"todos | async\"\n        (complete)=\"completeTodo($event)\"\n        (delete)=\"deleteTodo($event)\"\n      ></todo-list>\n      =========\n      <div>\n        <button (click)=\"show('ALL')\">All</button>\n        <button (click)=\"show('PENDING')\">Pending</button>\n        <button (click)=\"show('COMPLETE')\">Complete</button>\n      </div>\n    </div>\n  ",
+            template: "\n    <div>\n      <log-monitor></log-monitor>\n      <h2>Todos</h2>\n      <new-todo-input (create)=\"addTodo($event)\"></new-todo-input>\n\n      =========\n      <todo-list\n        [todos]=\"todos | async\"\n        (matched)=\"matchedTodo($event)\"\n        (delete)=\"deleteTodo($event)\"\n      ></todo-list>\n      =========\n      <div>\n        <button (click)=\"show('ALL')\">All</button>\n        <button (click)=\"show('PENDING')\">Pending</button>\n        <button (click)=\"show('MATCHED')\">Matched</button>\n      </div>\n    </div>\n  ",
             directives: [devtools_1.LogMonitor, newTodo_1.NewTodoInput, todoList_1.TodoList],
             changeDetection: core_1.ChangeDetectionStrategy.OnPush
         }), 

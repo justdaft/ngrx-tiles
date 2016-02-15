@@ -1,5 +1,6 @@
 <div>
-  <input type="text" #newtodo placeholder="Add a tile"/>
-  <button (click)="saveTodo(newtodo)">Add</button>
+  <!-- {{diagnostic}} -->
+  <input #box (keyup.enter)="playerName=box.value" (blur)="playerName=box.value">
+  <!-- <p>{{playerName}}</p> -->
   <button (click)="addFromList()">Add from List</button>
 </div>

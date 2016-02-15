@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var TodoListItem = (function () {
     function TodoListItem() {
-        this.complete = new core_1.EventEmitter();
+        this.matched = new core_1.EventEmitter();
         this.destroy = new core_1.EventEmitter();
     }
     __decorate([
@@ -21,7 +21,7 @@ var TodoListItem = (function () {
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], TodoListItem.prototype, "complete", void 0);
+    ], TodoListItem.prototype, "matched", void 0);
     __decorate([
         core_1.Output('delete'), 
         __metadata('design:type', Object)
@@ -29,7 +29,7 @@ var TodoListItem = (function () {
     TodoListItem = __decorate([
         core_1.Component({
             selector: 'todo-list-item',
-            template: "\n    <li>\n      <p>_id: {{todo._id}}</p>\n      <p [class.completed]=\"todo.completed\">\n      {{todo.uId}}</p>\n      tileImageId: {{todo.tileImageId}}\n      <p><button (click)=\"complete.emit(todo)\"> Done </button>\n      <button (click)=\"destroy.emit(todo)\"> Delete </button></p>\n    </li>\n  "
+            template: "\n    <li>\n      <p><strong>Game Id:</strong> {{todo.id}}</p>\n      <p [class.matchedd]=\"todo.matchedd\">\n      <strong>playerName:</strong> {{todo.playerName}}</p>\n      <p><strong>matchedPairs:</strong> {{todo.matchedPairs}}</p>\n      <p><strong>turnsTaken: </strong>{{todo.turnsTaken}}</p>\n      <p><strong>dateCreated:</strong> {{todo.dateCreated}}</p>\n      <p><button (click)=\"matched.emit(todo)\"> Done </button>\n      <button (click)=\"destroy.emit(todo)\"> Delete </button></p>\n    </li>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], TodoListItem);
@@ -37,7 +37,7 @@ var TodoListItem = (function () {
 }());
 var TodoList = (function () {
     function TodoList() {
-        this.completeTodo = new core_1.EventEmitter();
+        this.matchedTodo = new core_1.EventEmitter();
         this.deleteTodo = new core_1.EventEmitter();
     }
     __decorate([
@@ -45,9 +45,9 @@ var TodoList = (function () {
         __metadata('design:type', Object)
     ], TodoList.prototype, "todos", void 0);
     __decorate([
-        core_1.Output('complete'), 
+        core_1.Output('matched'), 
         __metadata('design:type', Object)
-    ], TodoList.prototype, "completeTodo", void 0);
+    ], TodoList.prototype, "matchedTodo", void 0);
     __decorate([
         core_1.Output('delete'), 
         __metadata('design:type', Object)
@@ -55,7 +55,7 @@ var TodoList = (function () {
     TodoList = __decorate([
         core_1.Component({
             selector: 'todo-list',
-            template: "\n    <div>\n      <todo-list-item\n        *ngFor=\"#todo of todos\"\n        [todo]=\"todo\"\n        (complete)=\"completeTodo.emit($event)\"\n        (delete)=\"deleteTodo.emit($event)\"\n      ></todo-list-item>\n    </div>\n  ",
+            template: "\n    <div>\n      <todo-list-item\n        *ngFor=\"#todo of todos\"\n        [todo]=\"todo\"\n        (matched)=\"matchedTodo.emit($event)\"\n        (delete)=\"deleteTodo.emit($event)\"\n      ></todo-list-item>\n    </div>\n  ",
             directives: [TodoListItem]
         }), 
         __metadata('design:paramtypes', [])

@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+;
 var NewTodoInput = (function () {
     function NewTodoInput() {
         this.create = new core_1.EventEmitter();
@@ -18,7 +19,6 @@ var NewTodoInput = (function () {
     };
     ;
     NewTodoInput.prototype.addFromList = function () {
-        var _this = this;
         var tileData = [
             {
                 _id: 1,
@@ -381,9 +381,14 @@ var NewTodoInput = (function () {
                 coverId: 35
             }
         ];
-        tileData.map(function (item) {
-            _this.saveTodo(item);
-        });
+        this.game = {
+            playerName: this.playerName,
+            tiles: tileData,
+            matchedPairs: 0,
+            turnsTaken: 0,
+            dateCreated: new Date()
+        };
+        this.saveTodo(this.game);
     };
     ;
     __decorate([

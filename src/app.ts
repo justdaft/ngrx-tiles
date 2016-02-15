@@ -20,14 +20,14 @@ import {TodoList} from './components/todoList';
       =========
       <todo-list
         [todos]="todos | async"
-        (complete)="completeTodo($event)"
+        (matched)="matchedTodo($event)"
         (delete)="deleteTodo($event)"
       ></todo-list>
       =========
       <div>
         <button (click)="show('ALL')">All</button>
         <button (click)="show('PENDING')">Pending</button>
-        <button (click)="show('COMPLETE')">Complete</button>
+        <button (click)="show('MATCHED')">Matched</button>
       </div>
     </div>
   `,
@@ -52,9 +52,9 @@ export class App {
     console.log('addTodo(newTodo): ');
   }
 
-  completeTodo(todo) {
+  matchedTodo(todo) {
     this.store.dispatch({
-      type: TodoActions.COMPLETE_TODO,
+      type: TodoActions.MATCHED_TODO,
       payload: todo
     });
   }

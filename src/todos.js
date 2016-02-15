@@ -2,7 +2,7 @@
 exports.ADD_TODO = 'ADD_TODO';
 exports.UPDATE_TODO = 'UPDATE_TODO';
 exports.DELETE_TODO = 'DELETE_TODO';
-exports.COMPLETE_TODO = 'COMPLETE_TODO';
+exports.MATCHED_TODO = 'MATCHED_TODO';
 exports.todos = function (state, _a) {
     if (state === void 0) { state = []; }
     var type = _a.type, payload = _a.payload;
@@ -16,11 +16,11 @@ exports.todos = function (state, _a) {
                     todo :
                     Object.assign({}, todo, payload);
             });
-        case exports.COMPLETE_TODO:
+        case exports.MATCHED_TODO:
             return state.map(function (todo) {
                 return todo.id !== payload.id ?
                     todo :
-                    Object.assign({}, todo, { completed: true });
+                    Object.assign({}, todo, { matchedd: true });
             });
         case exports.DELETE_TODO:
             return state.filter(function (todo) { return todo.id !== payload.id; });
@@ -29,7 +29,7 @@ exports.todos = function (state, _a) {
     }
 };
 exports.ALL = 'ALL';
-exports.COMPLETE = 'COMPLETE';
+exports.MATCHED = 'MATCHED';
 exports.PENDING = 'PENDING';
 exports.MATCHED = 'MATCHED';
 exports.visibilityFilter = function (state, _a) {
@@ -38,10 +38,10 @@ exports.visibilityFilter = function (state, _a) {
     switch (type) {
         case exports.ALL:
             return function (todo) { return true; };
-        case exports.COMPLETE:
-            return function (todo) { return todo.completed; };
+        case exports.MATCHED:
+            return function (todo) { return todo.matchedd; };
         case exports.PENDING:
-            return function (todo) { return !todo.completed; };
+            return function (todo) { return !todo.matchedd; };
         case exports.MATCHED:
             return function (todo) { return !todo.isMatched; };
         default:

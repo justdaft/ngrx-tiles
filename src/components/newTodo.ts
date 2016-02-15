@@ -1,18 +1,33 @@
 import {Component, Output, EventEmitter} from 'angular2/core';
 
+interface IGame {
+  id?: number;
+  playerName?: string;
+  tiles?: any;
+  matchedPairs?: number;
+  turnsTaken?: number;
+  dateCreated?: any;
+};
+
 @Component({
   selector: 'new-todo-input',
   templateUrl: './src/components/newTodo.html'
 })
 
 export class NewTodoInput {
+  game: IGame;
+  playerName: string;
   @Output() create = new EventEmitter();
 
   saveTodo(obj) {
     this.create.emit(obj);
   };
 
+
+
   addFromList() {
+    // let newGame = new  NewGame(99, 'Billy', 'Flying');
+    // console.log(newGame.name);
     let tileData = [
       {
         _id: 1,
@@ -375,10 +390,18 @@ export class NewTodoInput {
         coverId: 35
       }
     ];
+    this.game = {
+      playerName: this.playerName,
+      tiles: tileData,
+      matchedPairs: 0,
+      turnsTaken: 0,
+      dateCreated: new Date()
+    };
+    this.saveTodo(this.game);
+    // tileData.map(item => {
+    //   this.saveTodo(item);
+    // });
+  };
 
-    tileData.map(item => {
-      this.saveTodo(item);
-    });
-
-};
+  // get diagnostic() { return JSON.stringify(this.game); };
 }
