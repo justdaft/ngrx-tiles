@@ -6,10 +6,10 @@
     "indent": "spaces",
     "max-line-length": [
       true,
-      100
+      1000
     ],
     "member-ordering": [
-      true,
+      false,
       "public-before-private",
       "static-before-instance",
       "variables-before-functions"

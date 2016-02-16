@@ -1,0 +1,7 @@
+<div>
+  <game-item
+    *ngFor="#game of games"
+    [game]="game"
+    (matched)="matchedTile.emit($event)"
+  ></game-item>
+</div>

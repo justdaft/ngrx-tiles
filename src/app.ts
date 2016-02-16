@@ -2,80 +2,52 @@
 import {Component, ChangeDetectionStrategy} from 'angular2/core';
 import {Store} from '@ngrx/store';
 import {LogMonitor} from '@ngrx/devtools';
-
-import * as TodoActions from './todos';
-
-import {NewTodoInput} from './components/newTodo';
-import {TodoList} from './components/todoList';
+import * as GameActions from './game-reducers';
+import {NewGame} from './new-game';
+import {GameList} from './game-list';
 
 @Component({
-  selector: 'todo-app',
+  selector: 'game-app',
   providers: [],
-  template: `
-    <div>
-      <log-monitor></log-monitor>
-      <h2>Todos</h2>
-      <new-todo-input (create)="addTodo($event)"></new-todo-input>
-
-      =========
-      <todo-list
-        [todos]="todos | async"
-        (matched)="matchedTodo($event)"
-        (delete)="deleteTodo($event)"
-      ></todo-list>
-      =========
-      <div>
-        <button (click)="show('ALL')">All</button>
-        <button (click)="show('PENDING')">Pending</button>
-        <button (click)="show('MATCHED')">Matched</button>
-      </div>
-    </div>
-  `,
-  directives: [LogMonitor, NewTodoInput, TodoList],
+  templateUrl: './src/app.html',
+  directives: [LogMonitor, NewGame, GameList],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class App {
-  todos: any;
+  games: any;
   constructor(private store: Store) {
-    this.todos = store.select('todos')
-      .combineLatest(store.select('visibilityFilter'), (todos, visibilityFilter) => {
-      return todos.filter(visibilityFilter);
+    this.games = store.select('games')
+      .combineLatest(store.select('visibilityFilter'), (games, visibilityFilter) => {
+      return games.filter(visibilityFilter);
     });
   }
 
-  addTodo(newTodo) {
+  addGame(game) {
     this.store.dispatch({
-      type: TodoActions.ADD_TODO,
-      payload: newTodo
+      type: GameActions.ADD_GAME,
+      payload: game
     });
-    console.log('addTodo(newTodo): ');
+    console.log('addGame(game): ');
   }
 
-  matchedTodo(todo) {
+  matchedTile(game) {
     this.store.dispatch({
-      type: TodoActions.MATCHED_TODO,
-      payload: todo
-    });
-  }
-
-  deleteTodo(todo) {
-    this.store.dispatch({
-      type: TodoActions.DELETE_TODO,
-      payload: todo
+      type: GameActions.MATCHED_TILE,
+      payload: game
     });
   }
 
-  matchTodo(todo) {
-    this.store.dispatch({
-      type: TodoActions.DELETE_TODO,
-      payload: todo
-    });
-  }
+  // deleteGame(tile) {
+  //   this.store.dispatch({
+  //     type: GameActions.DELETE_TODO,
+  //     payload: tile
+  //   });
+  // }
 
   show(filter) {
     this.store.dispatch({
-      type: TodoActions[filter]
+      type: GameActions[filter]
     });
   }
 }

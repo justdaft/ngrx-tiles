@@ -1,0 +1,15 @@
+<div>
+  <log-monitor></log-monitor>
+  <h2>Games</h2>
+  <new-game (create)="addGame($event)"></new-game>
+  =========
+  <game-list
+    [games]="games | async"
+    (matched)="matchedGame($event)"
+  ></game-list>
+  =========
+  <div>
+    <button (click)="show('ALL')">All</button>
+    <button (click)="show('MATCHED')">Matched</button>
+  </div>
+</div>

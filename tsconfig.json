@@ -1,1 +1,30 @@
-{}
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": false,
+    "sourceMap": true
+  },
+  "files": [
+    "./src/app.ts",
+    "./src/game-item.ts",
+    "./src/game-list.ts",
+    "./src/game-reducers.ts",
+    "./src/main.ts",
+    "./src/new-game.ts",
+    "./typings/immutable.d.ts",
+    "./typings/rx.all.d.ts"
+  ],
+  "filesGlob": [
+    "./src/**/*.ts",
+    "./typings/**/*.ts"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}

@@ -10,22 +10,20 @@ interface IGame {
 };
 
 @Component({
-  selector: 'new-todo-input',
-  templateUrl: './src/components/newTodo.html'
+  selector: 'new-game',
+  templateUrl: './src/new-game.html'
 })
 
-export class NewTodoInput {
+export class NewGame {
   game: IGame;
   playerName: string;
   @Output() create = new EventEmitter();
 
-  saveTodo(obj) {
+  saveGame(obj) {
     this.create.emit(obj);
   };
 
-
-
-  addFromList() {
+  createNewGame() {
     // let newGame = new  NewGame(99, 'Billy', 'Flying');
     // console.log(newGame.name);
     let tileData = [
@@ -390,16 +388,19 @@ export class NewTodoInput {
         coverId: 35
       }
     ];
+
+let _tileData = tileData.sort(function () { return Math.random() - 0.5; });
+
     this.game = {
       playerName: this.playerName,
-      tiles: tileData,
+      tiles: _tileData,
       matchedPairs: 0,
       turnsTaken: 0,
       dateCreated: new Date()
     };
-    this.saveTodo(this.game);
+    this.saveGame(this.game);
     // tileData.map(item => {
-    //   this.saveTodo(item);
+    //   this.saveTile(item);
     // });
   };
 

@@ -1,0 +1,9 @@
+<li>
+  <p><strong>Game Id:</strong> {{game.id}}</p>
+  <p [class.matched]="game.matched">
+  <strong>playerName:</strong> {{game.playerName}}</p>
+  <p><strong>matchedPairs:</strong> {{game.matchedPairs}}</p>
+  <p><strong>turnsTaken: </strong>{{game.turnsTaken}}</p>
+  <p><strong>dateCreated:</strong> {{game.dateCreated}}</p>
+  <p><button (click)="matched.emit(game)"> Done </button>
+</li>

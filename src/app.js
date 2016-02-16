@@ -41,12 +41,6 @@ var App = (function () {
             payload: todo
         });
     };
-    App.prototype.matchTodo = function (todo) {
-        this.store.dispatch({
-            type: TodoActions.DELETE_TODO,
-            payload: todo
-        });
-    };
     App.prototype.show = function (filter) {
         this.store.dispatch({
             type: TodoActions[filter]
