@@ -6,6 +6,7 @@ import * as GameActions from './game-reducers';
 import {NewGame} from './new-game';
 import {GameList} from './game-list';
 
+
 @Component({
   selector: 'game-app',
   providers: [],

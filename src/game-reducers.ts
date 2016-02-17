@@ -5,6 +5,16 @@ export const UPDATE_GAME = 'UPDATE_GAME';
 export const DELETE_GAME = 'DELETE_GAME';
 export const MATCHED_TILE = 'MATCHED_TILE';
 
+
+let initialState: IGames = fromJS({
+  result: [],
+  entities: {
+    users: {}
+  },
+  adding: false,
+  loading: false
+});
+
 export const games = (state = [], {type, payload}) => {
   console.log('ACTION:', type, payload);
   switch (type) {

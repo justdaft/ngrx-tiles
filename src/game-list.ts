@@ -9,6 +9,6 @@ import { GameItem} from './game-item';
 
 export class GameList {
   @Input() games;
-  @Output('matched') matchedTile = new EventEmitter();
+  // @Output('matched') matchedTile = new EventEmitter();
   // @Output('delete') deleteTile = new EventEmitter();
 }

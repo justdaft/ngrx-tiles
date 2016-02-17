@@ -6,5 +6,5 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
 })
 export class GameItem {
   @Input() game;
-  @Output() matched = new EventEmitter();
+  // @Output() matched = new EventEmitter();
 }
