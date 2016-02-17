@@ -13,7 +13,9 @@
     "./src/game-item.ts",
     "./src/game-list.ts",
     "./src/game-reducers.ts",
+    "./src/games.ts",
     "./src/main.ts",
+    "./src/models.ts",
     "./src/new-game.ts",
     "./typings/immutable.d.ts",
     "./typings/rx.all.d.ts"

@@ -1,13 +1,8 @@
-import {Component, Output, EventEmitter} from 'angular2/core';
+let {List, Map, fromJS} = Immutable;
 
-interface IGame {
-  id?: number;
-  playerName?: string;
-  tiles?: any;
-  matchedPairs?: number;
-  turnsTaken?: number;
-  dateCreated?: any;
-};
+import {Component, Output, EventEmitter} from 'angular2/core';
+import {IGame} from './models';
+
 
 @Component({
   selector: 'new-game',
@@ -15,6 +10,7 @@ interface IGame {
 })
 
 export class NewGame {
+  gameState: any;
   game: IGame;
   playerName: string;
   @Output() create = new EventEmitter();
@@ -23,7 +19,13 @@ export class NewGame {
     this.create.emit(obj);
   };
 
+
+
   createNewGame() {
+    this.gameState = Immutable.Map({
+      tiles: Immutable.List()
+  });
+
     // let newGame = new  NewGame(99, 'Billy', 'Flying');
     // console.log(newGame.name);
     let tileData = [
@@ -389,7 +391,7 @@ export class NewGame {
       }
     ];
 
-let _tileData = tileData.sort(function () { return Math.random() - 0.5; });
+    let _tileData = tileData.sort(function () { return Math.random() - 0.5; });
 
     this.game = {
       playerName: this.playerName,
@@ -398,7 +400,16 @@ let _tileData = tileData.sort(function () { return Math.random() - 0.5; });
       turnsTaken: 0,
       dateCreated: new Date()
     };
-    this.saveGame(this.game);
+
+    this.gameState = this.gameState.mergeDeep({
+                tiles: _tileData,
+                playerName: this.playerName,
+                matchedPairs: 0,
+                turnsTaken: 0,
+                dateCreated: new Date()
+            });
+
+    this.saveGame(this.gameState);
     // tileData.map(item => {
     //   this.saveTile(item);
     // });
