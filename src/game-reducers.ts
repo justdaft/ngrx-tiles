@@ -1,10 +1,16 @@
 //games reducer
-
-export const ADD_GAME = 'ADD_GAME';
-export const UPDATE_GAME = 'UPDATE_GAME';
-export const DELETE_GAME = 'DELETE_GAME';
-export const MATCHED_TILE = 'MATCHED_TILE';
-
+import {
+  'LOADING_GAMES',
+  'LOADED_GAMES',
+  'ADDING_GAME',
+  'ADDED_GAME',
+  'PATCHED_GAME',
+  'PATCHED_TILE',
+  'ADD_GAME',
+  'UPDATE_GAME',
+  'DELETE_GAME',
+  'MATCHED_TILE'
+} from './game-models';
 
 let initialState: IGames = fromJS({
   result: [],

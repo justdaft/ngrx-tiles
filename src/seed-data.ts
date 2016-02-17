@@ -1,6 +1,6 @@
 export const SeedTiles = [
   {
-    _id: 1,
+    tileId: 1,
     tileImageId: 1,
     x: 0,
     y: 0,
@@ -10,7 +10,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 2,
+    tileId: 2,
     tileImageId: 2,
     x: 0,
     y: 0,
@@ -20,7 +20,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 3,
+    tileId: 3,
     tileImageId: 3,
     x: 0,
     y: 0,
@@ -30,7 +30,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 4,
+    tileId: 4,
     tileImageId: 4,
     x: 0,
     y: 0,
@@ -40,7 +40,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 5,
+    tileId: 5,
     tileImageId: 5,
     x: 0,
     y: 0,
@@ -50,7 +50,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 6,
+    tileId: 6,
     tileImageId: 6,
     x: 0,
     y: 0,
@@ -60,7 +60,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 7,
+    tileId: 7,
     tileImageId: 7,
     x: 0,
     y: 0,
@@ -70,7 +70,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 8,
+    tileId: 8,
     tileImageId: 8,
     x: 0,
     y: 0,
@@ -80,7 +80,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 9,
+    tileId: 9,
     tileImageId: 9,
     x: 0,
     y: 0,
@@ -90,7 +90,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 10,
+    tileId: 10,
     tileImageId: 10,
     x: 0,
     y: 0,
@@ -100,7 +100,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 11,
+    tileId: 11,
     tileImageId: 11,
     x: 0,
     y: 0,
@@ -110,7 +110,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 12,
+    tileId: 12,
     tileImageId: 12,
     x: 0,
     y: 0,
@@ -120,7 +120,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 13,
+    tileId: 13,
     tileImageId: 13,
     x: 0,
     y: 0,
@@ -130,7 +130,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 14,
+    tileId: 14,
     tileImageId: 14,
     x: 0,
     y: 0,
@@ -140,7 +140,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 15,
+    tileId: 15,
     tileImageId: 15,
     x: 0,
     y: 0,
@@ -150,7 +150,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 16,
+    tileId: 16,
     tileImageId: 16,
     x: 0,
     y: 0,
@@ -160,7 +160,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 17,
+    tileId: 17,
     tileImageId: 17,
     x: 0,
     y: 0,
@@ -170,7 +170,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 18,
+    tileId: 18,
     tileImageId: 18,
     x: 0,
     y: 0,
@@ -180,7 +180,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 19,
+    tileId: 19,
     tileImageId: 1,
     x: 0,
     y: 0,
@@ -190,7 +190,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 20,
+    tileId: 20,
     tileImageId: 2,
     x: 0,
     y: 0,
@@ -200,7 +200,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 21,
+    tileId: 21,
     tileImageId: 3,
     x: 0,
     y: 0,
@@ -210,7 +210,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 22,
+    tileId: 22,
     tileImageId: 4,
     x: 0,
     y: 0,
@@ -220,7 +220,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 23,
+    tileId: 23,
     tileImageId: 5,
     x: 0,
     y: 0,
@@ -230,7 +230,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 24,
+    tileId: 24,
     tileImageId: 6,
     x: 0,
     y: 0,
@@ -240,7 +240,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 25,
+    tileId: 25,
     tileImageId: 7,
     x: 0,
     y: 0,
@@ -250,7 +250,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 26,
+    tileId: 26,
     tileImageId: 8,
     x: 0,
     y: 0,
@@ -260,7 +260,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 27,
+    tileId: 27,
     tileImageId: 9,
     x: 0,
     y: 0,
@@ -270,7 +270,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 28,
+    tileId: 28,
     tileImageId: 10,
     x: 0,
     y: 0,
@@ -280,7 +280,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 29,
+    tileId: 29,
     tileImageId: 11,
     x: 0,
     y: 0,
@@ -290,7 +290,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 30,
+    tileId: 30,
     tileImageId: 12,
     x: 0,
     y: 0,
@@ -300,7 +300,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 31,
+    tileId: 31,
     tileImageId: 13,
     x: 0,
     y: 0,
@@ -310,7 +310,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 32,
+    tileId: 32,
     tileImageId: 14,
     x: 0,
     y: 0,
@@ -320,7 +320,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 33,
+    tileId: 33,
     tileImageId: 15,
     x: 0,
     y: 0,
@@ -330,7 +330,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 34,
+    tileId: 34,
     tileImageId: 16,
     x: 0,
     y: 0,
@@ -340,7 +340,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 35,
+    tileId: 35,
     tileImageId: 17,
     x: 0,
     y: 0,
@@ -350,7 +350,7 @@ export const SeedTiles = [
     coverId: 35, isFlipped: false
   },
   {
-    _id: 36,
+    tileId: 36,
     tileImageId: 18,
     x: 0,
     y: 0,
